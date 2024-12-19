@@ -7,16 +7,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function Genre({ params }) {
+
+  const {genre} = await params;
+
   // Fetch movies based on the genre
   let movies_list = [];
   let title = "";
-  if (params.genre === "getTrendingMovies") {
+  if (genre === "getTrendingMovies") {
     movies_list = await getTrendingMovies();
     title = "Trending Movies";
-  } else if (params.genre === "getNowPlayingMovies") {
+  } else if (genre === "getNowPlayingMovies") {
     movies_list = await getNowPlayingMovies();
     title = "Now Playing Movies";
-  } else if (params.genre === "getUpcomingMovies") {
+  } else if (genre === "getUpcomingMovies") {
     movies_list = await getUpcomingMovies();
     title = "Upcoming Movies";
   } else {

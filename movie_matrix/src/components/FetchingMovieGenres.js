@@ -9,9 +9,9 @@ export default async function FetchingMovieGenres({Genre, name, moreName}) {
         <div>
             <HeadingMovie heading={name}></HeadingMovie>
             <div className="grid lg:grid-cols-6 grid-cols-3">
-                {movies_list.map((movie, i) => (
-                    (i < 6) && <Link href={`/MovieDetails/${movie.id}`}>
-                        <div key={movie.id}>
+                {movies_list.map((movie, index) => (
+                    (index < 6) && <Link href={`/MovieDetails/${movie.id}`} key={index}>
+                        <div key={index}>
                             <Image className='hover:scale-90 delay-80 duration-300'
                                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                                 alt={movie.title}

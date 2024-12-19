@@ -66,12 +66,12 @@ const FavouritesPage = () => {
       </h1>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5 mb-10">
         {favouriteData.map((movie, i) => (
-          <div key={movie.id}>
+          <div key={i}>
             <Link href={`/MovieDetails/${movie.movieId}`}>
               <Image
                 className="hover:scale-90 delay-80 duration-300"
                 src={`https://image.tmdb.org/t/p/w500${movie.moviePoster}`}
-                alt={movie.title}
+                alt="Movie title"
                 width={250}
                 height={350}
               />

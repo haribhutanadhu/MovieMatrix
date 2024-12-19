@@ -9,9 +9,11 @@ import Link from "next/link";
 import MovieData from "@/components/MovieData";
 
 export default async function MovieId({ params }) {
-  const get_movie_detail = await getMovieDetails(params.movieId);
-  const get_similar_movie_details = await getSimilarMovies(params.movieId);
-  const get_video_details = await getVideoDetails(params.movieId);
+  const { movieId } = await params; // Ensure params are awaited
+
+  const get_movie_detail = await getMovieDetails(movieId);
+  const get_similar_movie_details = await getSimilarMovies(movieId);
+  const get_video_details = await getVideoDetails(movieId);
   const video_key = get_video_details?.["results"]?.[0]?.["key"];
 
   return (
@@ -32,8 +34,8 @@ export default async function MovieId({ params }) {
         {get_similar_movie_details.map(
           (movie, i) =>
             i < 10 && (
-              <Link href={`/MovieDetails/${movie.id}`}>
-                <div key={movie.id}>
+              <Link href={`/MovieDetails/${movie.id}`} key={i}>
+                <div>
                   <Image
                     className="hover:scale-90 delay-80 duration-300"
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
