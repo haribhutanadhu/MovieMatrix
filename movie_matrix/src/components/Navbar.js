@@ -56,9 +56,6 @@ export default function NavigationBar() {
     <div>
       <div className="pt-10 pb-10 flex justify-center items-center">
         <Link href={"/"} className="mx-5">
-          {/* <h1 className=" hidden sm:block opacity-80">
-                        <Image src={logo} width={200} height={100}></Image>
-                    </h1> */}
           <h1 className="bg-red-500 rounded-xl py-2 px-2 text-black text-2xl font-bold hidden lg:block opacity-70">
             Movie Matrix
           </h1>

@@ -27,8 +27,20 @@ export default function Footer() {
               ))}
             </div>
           ))}
-          <div className=" lg:mt-0 mt-4">
-            <h1 className="text-3xl font-sans font-semibold text-red-600 text-opacity-80 mt-4">
+
+          <div className="flex flex-col gap-[4px] sm:mt-4">
+            <h1 className="my-2 mt-8 text-red-600 text-2xl font-semibold sm:mt-0 ">
+              Movie Matrix
+            </h1>
+            <div className="flex gap-4 mt-1 text-2xl text-gray-500">
+              <FaInstagram className=" hover:text-white/80 cursor-pointer"></FaInstagram>
+              <MdMailOutline className=" hover:text-white/80 cursor-pointer"></MdMailOutline>
+              <FaGithub className=" hover:text-white/80 cursor-pointer"></FaGithub>
+            </div>
+          </div>
+
+          {/* <div className=" lg:mt-0 mt-4">
+            <h1 className="text-xl md:text-2xl sm:text-3xl font-sans font-semibold text-red-600 text-opacity-80 mt-4 ">
               Movie Matrix
             </h1>
             <h2 className="text-white/80 mt-3">
@@ -45,11 +57,22 @@ export default function Footer() {
               <MdMailOutline className=" hover:text-white/70 cursor-pointer"></MdMailOutline>
               <FaGithub className=" hover:text-white/70 cursor-pointer"></FaGithub>
             </div>
+          </div> */}
+        </div>
+        <div className="text-gray-500 mt-10 ">
+          <div className="flex justify-center gap-2">
+            <h1>Developed by </h1>
+            <Link
+              href="https://github.com/haribhutanadhu"
+              className="cursor-pointer font-semibold hover:text-white"
+            >
+              Hari Bhutandhu
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <h1>Movie Matrix copy rights reserved @2024</h1>
           </div>
         </div>
-        <h1 className="text-gray-500 flex justify-center mt-10">
-          Movie Matrix copy rights reserved @2024
-        </h1>
       </div>
     </div>
   );

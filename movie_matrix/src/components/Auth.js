@@ -14,14 +14,14 @@ const SignIn = () => {
           <div>
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <MenuButton>
+                <MenuButton className="flex items-center justify-center min-w-[35px] min-h-[35px]">
                   <Image
-                    src={session?.user?.image}
-                    className="rounded-full cursor-pointer mt-2"
-                    width={35}
-                    height={35}
-                    alt="image"
-                  ></Image>
+                    src={session?.user?.image || "/default-avatar.png"}
+                    className="rounded-full cursor-pointer mt-2 w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10"
+                    width={30}
+                    height={30}
+                    alt="User image"
+                  />
                 </MenuButton>
               </div>
               <MenuItems
@@ -30,11 +30,8 @@ const SignIn = () => {
               >
                 <div className="py-2">
                   <h1 className="text-gray-400 ml-4">
-                    {" "}
-                    <span className="text-red-500 text-opacity-70">
-                      Hi
-                    </span>{" "}
-                    {session?.user?.name} !!{" "}
+                    <span className="text-red-500 text-opacity-70">Hi</span>{" "}
+                    {session?.user?.name} !!
                   </h1>
                   <MenuItem>
                     <Link
@@ -48,7 +45,7 @@ const SignIn = () => {
                     <MenuItem>
                       <Link
                         href="/AdminPage"
-                        className="block px-4 pb-4 text-md text-gray-500 hover:text-white/70 "
+                        className="block px-4 pb-4 text-md text-gray-500 hover:text-white/70"
                       >
                         Admin Page
                       </Link>
